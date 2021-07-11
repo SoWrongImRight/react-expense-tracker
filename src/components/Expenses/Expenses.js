@@ -7,17 +7,17 @@ import './Expenses.css';
 function Expenses(props) {
   const [filteredYear, setFilteredYear] = useState('2020');
 
-  const saveFilterYear = (enteredFilterYear) => {
-    setFilteredYear(enteredFilterYear);
+  const filterChangeHandler = (selectedYear) => {
+    setFilteredYear(selectedYear);
 
-    console.log('In Exepense.js ' + filteredYear);
+    console.log('In Exepense.js ' + selectedYear);
   };
 
   return (
     <div>
       <Card className="expenses">
         <ExpensesFilter
-          onSaveFilterYear={saveFilterYear}
+          onSaveFilterYear={filterChangeHandler}
           selected={filteredYear}
         />
         <ExpenseItem
